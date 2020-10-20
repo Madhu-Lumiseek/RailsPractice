@@ -1,0 +1,17 @@
+/ Navigation
+%nav.navbar.navbar-expand-lg.navbar-light.bg-info
+  %a.navbar-brand{:href => "/"}
+    %img{:alt => "", :src => "https://lumiseek.com/wp-content/uploads/2019/06/logo.png"}
+    %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #collapse.navbar-collapse
+      %ul.navbar-nav.ml-auto
+        %li.nav-item.text-large
+          
+          = link_to 'Home', root_path
+        %li.nav-item.text-large
+          
+          = link_to 'Post', posts_path
+        %li.nav-item.text-large
+
+          = link_to 'Authors', authors_path
