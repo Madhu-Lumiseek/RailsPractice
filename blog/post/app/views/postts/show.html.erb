@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @postt.title %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @postt.genre %>
+</p>
+
+<p>
+  <strong>Noofpages:</strong>
+  <%= @postt.noofpages %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @postt.rating %>
+</p>
+
+<p>
+  <strong>Canreadanyone:</strong>
+  <%= @postt.canreadanyone %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @postt.description %>
+</p>
+
+<%= link_to 'Edit', edit_postt_path(@postt) %> |
+<%= link_to 'Back', postts_path %>
