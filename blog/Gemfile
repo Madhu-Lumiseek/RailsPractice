@@ -5,9 +5,20 @@ ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
+gem 'haml-rails', '~> 2.0', '>= 2.0.1'
+gem 'haml', '~> 5.2'
+gem 'mongoid', '~> 7.0.5'
+gem 'carrierwave', '~> 2.0'
+gem 'carrierwave-mongoid', require: 'carrierwave/mongoid', git: 'git://github.com/jnicklas/carrierwave-mongoid.git'
+gem 'mongoid-grid_fs'
+gem 'bson_ext'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
+gem 'bootstrap', '~> 4.5', '>= 4.5.2'
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'sassc-rails', '>= 2.1.0'
+gem 'jquery-rails'
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
