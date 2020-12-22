@@ -1,0 +1,47 @@
+.container
+  %h1 Listing authors
+
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Title
+        %th{:colspan => "5"}
+        
+
+    %tbody
+      - @authors.each do |author|
+        %tr
+          %td= author.name
+          %td= author.title
+          %br
+          -# %td= link_to 'Show', author
+          %td
+            %script{:src => "https://kit.fontawesome.com/a076d05399.js"}
+            %a{href: "#{edit_author_path(author)}", :title => 'Edit'}
+              %i.far.fa-edit
+          -# %td= link_to 'Edit', edit_author_path(author)
+          -# %td= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' }
+          %td
+            %a{href: "#{author_path(id: author.id)}", data: { remote: true, method: 'delete'}, 'data-confirm': 'Are you sure?'}
+              %i.far.fa-trash-alt
+
+  %br
+
+  = link_to 'New Author', new_author_path
+-# = link_to 'Home', root_path
+
+:scss
+  table, td, th {  
+    border: 2px solid #ddd;
+    text-align: left;
+    
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    padding: 15px;
+  }

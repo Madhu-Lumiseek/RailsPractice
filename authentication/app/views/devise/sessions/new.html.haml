@@ -1,0 +1,24 @@
+.container
+  %h2 Log in
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .field
+      = f.label :login, "Email or Username"
+      %br/
+      = f.text_field :login, autofocus: true, autocomplete: "login"
+    .field
+      = f.label :password
+      %br/
+      = f.password_field :password, autocomplete: "current-password"
+    .actions
+      = f.submit "Log in"
+  = render "devise/shared/links"
+
+:scss
+  .container {
+    background: #eceeee;
+    border: 1px solid #42464b;
+    border-radius: 6px;
+    height: 257px;
+    margin: 20px auto 0;
+    width: 298px;
+  } 

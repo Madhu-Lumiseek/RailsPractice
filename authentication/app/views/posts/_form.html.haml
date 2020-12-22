@@ -1,0 +1,33 @@
+.container.giantbox
+  = form_for @post do |f|
+    - if @post.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+        %ul
+          - @post.errors.full_messages.each do |message|
+            %li= message
+
+    .field
+      = f.label :name
+      = f.select :author_id, Author.all.map {|c| [c.name, c.id]}, include_blank: true
+    .field
+      = f.label :title
+      = f.text_field :title
+    .field
+      = f.label :body
+      = f.text_area :body
+    .actions
+      = f.submit 'Save'
+
+:scss
+  .giantbox {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #ccc;
+    text-align: left;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+  }

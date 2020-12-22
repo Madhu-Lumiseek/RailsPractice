@@ -1,0 +1,50 @@
+.container
+  %h1 Posts
+
+  %table
+    %thead
+      %tr
+        %th Author name
+        %th Title
+        %th Body
+        %th{:colspan => "5"}
+
+    %tbody
+      - @posts.each do |post|
+        %tr
+          %td= post.author&.name
+          %td= post.title
+          %td= post.body
+          %br
+          -# %td= link_to 'Show', post
+          -# %td= link_to 'Edit', edit_post_path(post)
+          %td
+            %script{:src => "https://kit.fontawesome.com/a076d05399.js"}
+            -# %a{ href: "#{edit_post_path(id: post.id)}", :title => 'Edit' }
+            %a{href: "#{edit_post_path(post)}", :title => 'Edit'}
+              %i.far.fa-edit
+          -# %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+          %td
+            -# %script{:src => "https://kit.fontawesome.com/a076d05399.js"}
+            %a{href: "#{post_path(id: post.id)}", data: { remote: true, method: 'delete'}, 'data-confirm': 'Are you sure?'}
+              %i.far.fa-trash-alt
+  %br
+
+  = link_to 'Add Post', new_post_path
+  -# = link_to 'Home', root_path
+
+:scss
+  table, td, th {  
+    border: 2px solid #ddd;
+    text-align: left;
+    
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    padding: 15px;
+  }
+  

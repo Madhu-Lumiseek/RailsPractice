@@ -1,0 +1,25 @@
+= form_for(@user) do |f|
+  = render "devise/shared/error_messages", resource: @user
+  %fieldset
+    %ol
+      %li.required
+        = f.label :name
+        = f.text_field :name, size: 40, autofocus: true
+      -# %li.required
+      -#   = f.label :username
+      -#   = f.text_field :username, size: 40
+      %li.required
+        = f.label :email
+        = f.email_field :email, size: 40
+      -# %li.required
+      -#   = f.label :password
+      -#   = f.password_field :password, size: 40
+      -# %li.required
+      -#   = f.label :password_confirmation, "Confirm Password"
+      -#   = f.password_field :password_confirmation, size: 40
+    %p
+      - if @user.new_record?
+        = f.submit "Add User"
+      - else
+        = f.submit "Update User"
+      = link_to "Cancel", users_path, class: 'button'

@@ -1,0 +1,8 @@
+%label
+  = errors&.count
+- if errors.present?
+  %label
+    = "hihihihi....."
+  - errors.map do |error|
+    %li{style: ''}
+      = error.to_s
