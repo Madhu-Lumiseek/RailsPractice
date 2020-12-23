@@ -28,6 +28,8 @@
             -# %script{:src => "https://kit.fontawesome.com/a076d05399.js"}
             %a{href: "#{post_path(id: post.id)}", data: { remote: true, method: 'delete'}, 'data-confirm': 'Are you sure?'}
               %i.far.fa-trash-alt
+  .pagination
+    = paginate @posts
   %br
 
   = link_to 'Add Post', new_post_path

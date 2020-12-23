@@ -18,6 +18,9 @@
         %td
           %a{href: user_path(id: user.id), data: { remote: true, method: 'delete'}, 'data-confirm': 'Are you sure?'}
             %i.far.fa-trash-alt
+  .pagination
+    = paginate @users
+  %br/
 
   = link_to 'New User', new_user_path
 
